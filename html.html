@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css.css">
+    <!-- 구글폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;200;300;400;500&family=Maven+Pro:wght@400;500&family=Nanum+Gothic:wght@400;700;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="h-[100vh] w-[100vw] flex items-center justify-center ">
+        <div id="box-shadow-style"
+            class="p-4 rounded-[20px] w-[95vw] h-[95vh] shadow-[0px_0px_50px_-12px_rgb(0,0,0,0.25)] overflow-scroll-y ">
+            
+            <div id="head" class="bg-[#ddd] rounded-t-full w-[95vw] h-[15px] fixed top-[2.5vh] left-[50%] translate-x-[-50%]"></div>
+            <div id="gray-btn"
+                class="hover:cursor-pointer hover:w-[15px] hover:h-[15px] transition-[1s] w-[10px] h-[10px] rounded-full bg-gray-500 absolute top-[3vh] left-[7vw]">
+            </div>
+            <div id="pink-btn"
+                class="hover:cursor-pointer ml-[16px] hover:w-[15px] hover:h-[15px] transition-[1s] w-[10px] h-[10px] rounded-full bg-[#F2BED1] absolute top-[3vh] left-[7vw]">
+            </div>
+            <div id="blue-btn"
+                class="hover:cursor-pointer ml-[31px] hover:w-[15px] hover:h-[15px] transition-[1s] w-[10px] h-[10px] rounded-full bg-[#6096B4] absolute top-[3vh] left-[7vw]">
+            </div>
+            <ul class="flex justify-between">
+                <li>memo</li>
+                <li>number</li>
+            </ul>
+
+            <div class="flex justify-between">
+                <!-- memo -->
+                <div class="border-y w-[41vw] h-[30px] inline-block ">
+                    <input type="text" id="input-memo" placeholder="memo"
+                        class="w-full h-full focus:outline-y outline-gray-500 text-sm px-1">
+                </div>
+                <!-- number -->
+                <div class="border-y w-[41vw] h-[30px] inline-block flex justify-between items-center ">
+                    <div id="plus-btn"
+                        class="hover:cursor-pointer relative w-[20px] h-[20px] bg-black rounded-full text-white flex items-center justify-center">
+                        <svg class="fill-white absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%]"
+                            height="15px" width="15px" id="Layer_1" style="enable-background:new 0 0 32 32;"
+                            version="1.1" viewBox="0 0 32 32" width="32px" xml:space="preserve"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <path
+                                d="M28,14H18V4c0-1.104-0.896-2-2-2s-2,0.896-2,2v10H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h10v10c0,1.104,0.896,2,2,2  s2-0.896,2-2V18h10c1.104,0,2-0.896,2-2S29.104,14,28,14z" />
+                        </svg>
+                    </div>
+                    <div id="minus-btn"
+                        class="hidden hover:cursor-pointer relative w-[20px] h-[20px] bg-black rounded-full text-white flex items-center justify-center">
+                        <svg class="fill-white absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%]"
+                            height="15px" width="15px" id="Layer_1" style="enable-background:new 0 0 512 512;"
+                            version="1.1" viewBox="0 0 512 512" width="512px" xml:space="preserve"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <path
+                                d="M417.4,224H94.6C77.7,224,64,238.3,64,256c0,17.7,13.7,32,30.6,32h322.8c16.9,0,30.6-14.3,30.6-32  C448,238.3,434.3,224,417.4,224z" />
+                        </svg>
+                    </div>
+                    <input type="number" id="input-number" placeholder="number"
+                        class="w-[35vw] h-full focus:outline-y outline-gray-500 text-sm px-1">
+                </div>
+            </div>
+
+            <!-- 플러스 마이너스 선택창 -->
+            <div id="btn-modal"
+                class="z-50 hidden flex pt-[130px] place-content-around fixed w-[100vw] h-[100vh] top-0 left-0 bg-[rgba(0,0,0,0.384)]">
+                <!-- 플러스 버튼 선택창 -->
+                <div id="plus-btn-select"
+                    class="hover:cursor-pointer relative w-[50px] h-[50px] rounded-full bg-black text-white text-center text-lg hover:opacity-50">
+                    <svg class="fill-white absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%]"
+                        height="20px" width="20px" id="Layer_1" style="enable-background:new 0 0 32 32;" version="1.1"
+                        viewBox="0 0 32 32" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <path
+                            d="M28,14H18V4c0-1.104-0.896-2-2-2s-2,0.896-2,2v10H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h10v10c0,1.104,0.896,2,2,2  s2-0.896,2-2V18h10c1.104,0,2-0.896,2-2S29.104,14,28,14z" />
+                    </svg>
+                </div>
+                <!-- 마이너스 버튼 선택창 -->
+                <div id="minus-btn-select"
+                    class="hover:cursor-pointer relative w-[50px] h-[50px] rounded-full bg-black text-white text-center text-lg hover:opacity-50">
+                    <svg class="fill-white absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%]"
+                        height="27px" width="27px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1"
+                        viewBox="0 0 512 512" width="512px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <path
+                            d="M417.4,224H94.6C77.7,224,64,238.3,64,256c0,17.7,13.7,32,30.6,32h322.8c16.9,0,30.6-14.3,30.6-32  C448,238.3,434.3,224,417.4,224z" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- ok버튼 -->
+            <div class="flex flex-row-reverse m-2">
+                <button id="ok-btn" class="bg-black text-white text-xs p-1 rounded-[5px] w-[50px]">ok</button>
+            </div>
+
+            <!-- 작성한 목록 -->
+            <div id="list-wrap">
+                <!-- <div class="h-[150px]">dfs</div> -->
+            </div>
+
+
+
+            <!-- 맨아래 total -->
+            <div class="bg-white rounded-b-[20px] w-[95vw] h-[37px] fixed bottom-[2.5vh] left-[50%] translate-x-[-50%]">
+            </div>
+            <div id="total-style"
+                class="flex justify-between bg-gray-300 fixed bottom-[5vh] left-[50%] translate-x-[-50%]">
+                <div class="w-[41vw] h-[30px] text-sm flex items-center pl-2">total</div>
+                <hr class="bg-white w-[3px] h-[30px]" />
+                <div id="total" class="w-[41vw] h-[30px] text-right pr-2"></div>
+            </div>
+        </div>
+    </div>
+    <script src="js.js"></script>
+</body>
+
+</html>

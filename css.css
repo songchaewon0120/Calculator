@@ -1,0 +1,32 @@
+body {
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    font-family: 'Maven Pro', sans-serif;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+input::-webkit-inner-spin-button {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+#box-shadow-style{
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+
+#box-shadow-style::-webkit-scrollbar {
+    border-radius: 10px;
+    
+}
+
+#box-shadow-style::-webkit-scrollbar-thumb{
+    background-color: black;
+    border-radius: 20px;
+}
+
+#box-shadow-style::-webkit-scrollbar-track{
+    background-color: transparent;
+    margin-top: 15px;
+    margin-bottom: 38px;
+}
